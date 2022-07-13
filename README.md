@@ -28,4 +28,5 @@ Schema: (model)
   - diet -  String
   - workout -  String
   - frequency  String - default value of daily
+  ![wireframe](/images/IMG-0439.jpg)
   
