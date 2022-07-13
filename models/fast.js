@@ -7,9 +7,9 @@ const { Schema, model } = mongoose
 const fastSchema = new Schema({//model declaration
     name: { type: String, required: true },
     goal: String,
-    fast: number,
+    fast: Number,
     diet: String,
-    frequency: { type: String, default: daily }
+    frequency: String,
     // owner: {
     //     type: Schema.Types.ObjectId,//
     //     ref: 'User',//const User = model('User', userSchema)

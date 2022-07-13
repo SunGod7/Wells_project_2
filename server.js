@@ -9,6 +9,9 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
+const fastRoutes = require('./controller/fast_routes')
+//const userRoutes = require('./controller/user_routes')
+//const MongoStore = require('connect-mongo')
 
 
 
@@ -31,12 +34,16 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 // to serve files from public statically
 app.use(express.static('public'))
+ app.use('/fasts', fastRoutes)
+
+ //app.use('/users', userRoutes)
 
 ////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
 app.get('/', (req, res) => {
 	res.send('your server is running, better go catch it')
+	//res.send("index.liquid")
 	
 })
 
