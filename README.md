@@ -36,6 +36,5 @@ Schema: (model)
   ![wireframe](/images/IMG-0444.jpg)
   ![wireframe](/images/IMG-0446.jpg)
   ![wireframe](/images/IMG-0456.jpg)
-  # wireframe!
   ![wireframe](/images/IMG-0456.jpg)
   
