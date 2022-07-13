@@ -22,6 +22,15 @@ User stories: (`As a user ...`)
 
 
 Schema: (model)
+workout
+ -name -String -required
+ -cardio -boolean
+ -weights -boolean
+ -period -number
+
+
+
+Schema: (model)
 - Plan
   - goal - String
   - fast -  String
