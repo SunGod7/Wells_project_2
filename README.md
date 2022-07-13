@@ -2,7 +2,7 @@
 # fasting API
 
 User stories: (`As a user ...`)
-95a72d35e154c0814ceff217b8cf2e5cd683b057
+
 - create a fasting plan
  - choose daily or weekly
  - choose workout, fasting period and goal
