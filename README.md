@@ -29,4 +29,9 @@ Schema: (model)
   - workout -  String
   - frequency  String - default value of daily
   ![wireframe](/images/IMG-0439.jpg)
-  
+  ![wireframe](/images/IMG-0440.jpg)
+  ![wireframe](/images/IMG-0441.jpg)
+  ![wireframe](/images/IMG-0442.jpg)
+  ![wireframe](/images/IMG-0443.jpg)
+  ![wireframe](/images/IMG-0444.jpg)
+  ![wireframe](/images/IMG-0446.jpg)
