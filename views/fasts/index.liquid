@@ -1,14 +1,34 @@
 {% layout 'layout.liquid' %}
 
 {% block content %}
-<div>
+<div class="container">
+    <!-- sidebar -->
+    <div class="sidebar"></div>
+    <!-- registration container -->
+    <div class="home-p">
+        <h1>FAST FOR LIFE</h1>
+        <h2>START YOUR JOURNEY</h2>
+        <!-- START FORM -->
+       
+            <!-- submit button -->
+            <a href="/fasts/show"><button>CREATE YOUR PLAN</button></a>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+<!-- <div>
     <h2 class="display-6">All Fasters</h2>
     <div class="row">
 
         {% for fast in fasts %}
             <div class="card" style="width: 18rem">
-                <!-- <h5 class="card-header">{{fruit.name}}</h5> -->
-                <div class="card-body">
+                 <h5 class="card-header">{{fruit.name}}</h5> -->
+                <!-- <div class="card-body">
                     <h6 class="card-title">
                         
                     </h6>
@@ -17,10 +37,9 @@
                        
                     </p>
                     
-                    <a href="/fasts/show" class="btn btn-info">View {{fast.name}}</a> 
+                    <a href="fasts/show" class="btn btn-info">View {{fast.name}}</a> 
                 </div>
             </div>
         {% endfor %}
     </div>
-</div>
-{% endblock %}
+</div> --> 

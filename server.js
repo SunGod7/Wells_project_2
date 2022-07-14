@@ -41,9 +41,10 @@ app.use(express.static('public'))
 ////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
-app.get('/', (req, res) => {
-	res.send('your server is running, better go catch it')
+app.get('/index', (req, res) => {
+	//res.send('your server is running, better go catch it')
 	//res.send("index.liquid")
+	res.render('index.liquid')
 	
 })
 

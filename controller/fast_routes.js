@@ -9,35 +9,48 @@ const Fast = require('../models/fast')
 
 //localhost:3000/fasts
 
-router.get('/', (req, res) => {
-    // mongoose to find all fruits
-    // Fast.find({})
-    // // return fruits as json
-    //     .then(fasts => {
-            //res.json(fast)
-            //res.render('fasts/index', { fasts })
-        // })
-        // .catch(err => {
-        //     res.json(err)
-        // })
-        res.render('/index')
-})
+
+
+// router.get('/index', (req, res) => {
+//     res.render('fasts/index.liquid')
+// })
+
+// router.get('/', (req, res) => {
+//     // mongoose to find all fruits
+//     Fast.find({})
+//     // return fruits as json
+//         .then(fasts => {
+//             //res.json(fast)
+//             res.render('fasts/index', { fasts })
+//         })
+//         .catch(err => {
+//             res.json(err)
+//         })
+//         //res.render('/index')
+// })
 
 //show
-//fasts/:id
-router.get('/:id', (req, res) => {
-    // mongoose to find all fruits
-    const fastId = req.params.id
-    Fast.findById({fastId})
-    // return fruits as json
-        .then(fast => {
-            //res.json(fast)
-            res.render('fasts/show', { fast })
-        })
-        .catch(err => {
-            res.json(err)
-        })
+
+
+
+router.get('/show', (req, res) => {
+    res.render('fasts/show.liquid')
+
 })
+//fasts/:id
+//router.get('/:id', (req, res) => {
+    // mongoose to find all fruits
+    // const fastId = req.params.id
+    // Fast.findById({fastId})
+    // // return fruits as json
+    //     .then(fast => {
+    //         //res.json(fast)
+    //         res.render('fasts/show', { fast })
+    //     })
+    //     .catch(err => {
+    //         res.json(err)
+    //     })
+//})
 //fast/seed
 router.get('/seed', (req, res) => {
     //res.render()
