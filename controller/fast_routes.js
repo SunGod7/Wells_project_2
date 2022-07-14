@@ -11,15 +11,16 @@ const Fast = require('../models/fast')
 
 router.get('/', (req, res) => {
     // mongoose to find all fruits
-    Fast.find({})
-    // return fruits as json
-        .then(fasts => {
+    // Fast.find({})
+    // // return fruits as json
+    //     .then(fasts => {
             //res.json(fast)
-            res.render('fasts/index', { fasts })
-        })
-        .catch(err => {
-            res.json(err)
-        })
+            //res.render('fasts/index', { fasts })
+        // })
+        // .catch(err => {
+        //     res.json(err)
+        // })
+        res.render('/index')
 })
 
 //show
