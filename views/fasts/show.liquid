@@ -5,44 +5,26 @@
    <title>Fasting Plan</title>
     <!-- STYLES -->
     <!-- ============= CONTAINER ============== -->
-    <div class="container">
-        <!-- sidebar -->
-        <div class="sidebar"></div>
-        <!--  container -->
-        <div class="Create plan">
-            <h1>Create Fasting Plan</h1>
-            <!-- START FORM -->
-            <form action="/register" method="POST">
-                <!-- fieldset for account info -->
-                <fieldset class="account-info">
-                    <!-- legend for account info -->
-                    <legend>PROFILE INFORMATION</legend>
-                    <!-- username -->
-                    <label for="username">USERNAME</label>
-                    <input type="text" id="username">
-                   
-                    <label for="goal">Goal</label>
-                    <input type="text" id="goal">
-                    
-                    
-                </fieldset>
-                <!-- fieldset for profile info -->
-                <fieldset class="profile-info">
-                    <legend>FAST INFORMATION</legend>
-                
-                    <label for="fast">Fast</label>
-                    <input type="number" id="fast" placeholder="how many hrs?">
+    
+    <div class="container-md">
+       
+            <h1>{{fast.name}}</h1>
+            <h2>Fast for: {{fast.fastHrs}} hours</h2>
+            <h2>Diet while fasting: {{fast.dietOn}}</h2>
+            <h2>Diet when not fasting: {{fast.dietOff}}</h2>
+            <h2>When: {{fast.frequency}}</h2>
+            <!-- <h2> {{fast._id}}</h2> -->
 
-                    <label for="frequency">Frequency</label>
-                    <input type="text" id="frequency" placeholder="daily or weekly?">
-                    
-                    <label for="diet">Diet</label>
-                    <input type="text" id="diet" placeholder="juice or water?">
-                </fieldset>
-                <!-- submit button -->
-                <input type="submit" value="CREATE PLAN">
+       
+        <div class="btn-create">
+          
+           
+            <form action="/fasts/new" method="POST">
+                 <input type="submit" value="CREATE FAST">
             </form>
+            <a href="/fasts/{{fast._id}}/edit" class="btn btn-primary">Edit Fruit</a>
+         
         </div>
+        <a href="/fasts/" class="back-btn">BACK</a>  
     </div>
-
 {% endblock %}

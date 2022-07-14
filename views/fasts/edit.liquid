@@ -1,0 +1,57 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/fasts/{{fast._id}}?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Create Your Fast</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="name" 
+                placeholder="name your fast"
+                value="{{fast.name}}"
+            >
+            <label class="form-label">fastHrs:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="fastHrs" 
+                placeholder="how long?"
+                value="{{fast.fastHrs}}"
+            >
+            <label class="form-label">dietOn:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="dietOn" 
+                placeholder="water only???"
+                value="{{fast.dietOn}}"
+            >
+            <label class="form-label">dietOff:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="dietOff" 
+                placeholder="Vegan???"
+                value="{{fast.dietOff}}"
+            >
+            <label class="form-label">frequency:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="frequency" 
+                placeholder="Daily???"
+                value="{{fast.frequency}}"
+            >
+
+        </fieldset>
+        <input 
+            type="submit" 
+            value="Edit Fasting Plan" 
+            class="btn btn-success"
+        >
+    </form>
+</div>
+{% endblock %}

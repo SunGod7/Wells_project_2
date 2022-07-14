@@ -6,13 +6,13 @@ const { Schema, model } = mongoose
 
 const fastSchema = new Schema({//model declaration
     name: { type: String, required: true },
-    goal: String,
-    fast: Number,
-    diet: String,
+    fastHrs: Number,
+    dietOn: String,
+    dietOff: String,
     frequency: String,
     // owner: {
     //     type: Schema.Types.ObjectId,//
-    //     ref: 'User',//const User = model('User', userSchema)
+    //     ref: 'User',//const User = model('User', userSchema)//null
     // },
     //comments: [commentSchema]// fruit can have many comments
 

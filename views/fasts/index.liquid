@@ -1,45 +1,30 @@
 {% layout 'layout.liquid' %}
 
 {% block content %}
-<div class="container">
-    <!-- sidebar -->
-    <div class="sidebar"></div>
-    <!-- registration container -->
-    <div class="home-p">
-        <h1>FAST FOR LIFE</h1>
-        <h2>START YOUR JOURNEY</h2>
-        <!-- START FORM -->
-       
-            <!-- submit button -->
-            <a href="/fasts/show"><button>CREATE YOUR PLAN</button></a>
-        </form>
-    </div>
-</div>
+<div>
+    <h2 class="display-6">FASTING PLANS</h2>
+    <div class="row">
 
+        {% for fast in fasts %}
+            <div class="card" style="width: 18rem">
+               
+                <div class="card-body">
+                    <h6 class="card-title">
+                        
+                    </h6>
+                    <p class="card-text"> {{fast.name.toUpperCase}} </p>
+                       
+                       
+                                                          
+                    
+                    <a href="/fasts/{{fast._id}}" class="btn btn-info">View </a> <!-- put img here -->
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div> 
 
 
 {% endblock %}
 
 
-<!-- <div>
-    <h2 class="display-6">All Fasters</h2>
-    <div class="row">
-
-        {% for fast in fasts %}
-            <div class="card" style="width: 18rem">
-                 <h5 class="card-header">{{fruit.name}}</h5> -->
-                <!-- <div class="card-body">
-                    <h6 class="card-title">
-                        
-                    </h6>
-                    <p class="card-text">
-                       Name: {{fast.name}}  Goal: {{fast.goal}} Fast Id: {{fast._id}}
-                       
-                    </p>
-                    
-                    <a href="fasts/show" class="btn btn-info">View {{fast.name}}</a> 
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-</div> --> 

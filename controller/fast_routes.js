@@ -6,58 +6,114 @@ const Fast = require('../models/fast')
 
 
 
+///edit
+//
 
-//localhost:3000/fasts
+router.get('/:id/edit', (req, res) => {
+    const fastId = req.params.id
+
+    Fast.findById(fastId)
+    // return fruits as json
+        .then(fast => {
+            //res.json(fast)
+            res.render('fasts/edit',  { fast })
+        })
+        .catch(err => {
+            res.json(err)
+        })
+    
+    
+       
+})
+
+//PUT - UPDATE
+router.put('/:id', (req, res) => {
+    const fastId = req.params.id
+
+    Fast.findByIdAndUpdate(fastId, req.body)
+
+       .then(fast =>{
+        res.redirect(`/fasts/${fruit_id}`)
+       })
+       .catch(err => {
+        res.json(err)
+    })
 
 
-
-// router.get('/index', (req, res) => {
-//     res.render('fasts/index.liquid')
-// })
-
-// router.get('/', (req, res) => {
-//     // mongoose to find all fruits
-//     Fast.find({})
-//     // return fruits as json
-//         .then(fasts => {
-//             //res.json(fast)
-//             res.render('fasts/index', { fasts })
-//         })
-//         .catch(err => {
-//             res.json(err)
-//         })
-//         //res.render('/index')
-// })
-
-//show
-
-
-
-router.get('/show', (req, res) => {
-    res.render('fasts/show.liquid')
 
 })
-//fasts/:id
-//router.get('/:id', (req, res) => {
+
+//NEW
+//localhost:3000/fruits
+router.get('/new', (req, res) => {
+    
+    res.render('fasts/new')
+       
+})
+
+//POST
+router.post('/', (req, res) => {
+
+    Fast.create(req.body)
+         .then(fast => {
+           console.log(fast)
+           //res.json(fast)
+           res.redirect('/fasts')
+    
+       })
+         .catch(err => {
+          res.json(err)
+    })
+    //res.render('fruits/new')
+       
+})
+//INDEX
+//localhost:3000/fasts
+router.get('/', (req, res) => {
     // mongoose to find all fruits
-    // const fastId = req.params.id
-    // Fast.findById({fastId})
-    // // return fruits as json
-    //     .then(fast => {
-    //         //res.json(fast)
-    //         res.render('fasts/show', { fast })
-    //     })
-    //     .catch(err => {
-    //         res.json(err)
-    //     })
-//})
+    Fast.find({})
+    // return fruits as json
+        .then(fasts => {
+            //res.json(fasts)
+            res.render('fasts/index', { fasts })
+        })
+        .catch(err => {
+            res.json(err)
+        })
+
+        
+})
+
+
+
+
+
+
+
+//SHOW
+//fasts/:id
+router.get('/:id', (req, res) => {
+    //mongoose to find all fruits
+    const fastId = req.params.id
+    Fast.findById(fastId)
+    // return fruits as json
+        .then(fast => {
+            //res.json(fast)
+            res.render('fasts/show',  { fast })
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
 //fast/seed
 router.get('/seed', (req, res) => {
     //res.render()
     const startFasts = [  
-    { name: 'will',  goal: 'lose weight', fast: '10', diet: 'water', frequency: 'daily'},
-    { name: 'michelle',  goal: 'lose weight', fast: '24', diet: 'juice', frequency: 'weekly'},
-    { name: 'victor',  goal: 'build muscle', fast: '10', diet: 'water', frequency: 'daily'},
+    { name: 'Supreme Fast', fastHrs: '21', dietOn: 'water only',  dietOff: 'no meat', frequency: 'daily for life'},
+    { name: 'Power Fast', fastHrs: '48', dietOn: 'water only',  dietOff: 'Eat Whatever You Want', frequency: 'every week'},
+    { name: 'Juice Fast', fastHrs: '48', dietOn: 'Water or Juice',  dietOff: '', frequency: 'Once a month'},
+    { name: 'Fruit Fast', fastHrs: '72', dietOn: '',  dietOff: 'Water and Fruit', frequency: 'daily'},
+    { name: 'Window Fast', fastHrs: '19', dietOn: 'WATER ONLY',  dietOff: 'Eat Whatever You Want', frequency: 'twice a week'},
     ]
     
      
@@ -68,7 +124,7 @@ Fast.deleteMany({})
       .then( ( )=> {
          Fast.create(startFasts)
          .then(data => {
-           res.json( data)
+           res.json(data)
     
        })
          .catch(console.error)
@@ -83,20 +139,6 @@ Fast.deleteMany({})
 
 
 })
-// GET - Index
-// localhost:3000/fruits
-// router.get('/', (req, res) => {
-//     // mongoose to find all fruits
-//     Fruit.find({})
-//     // return fruits as json
-//         .then(fruits => {
-//             // res.json(fruit)
-//             res.render('fruits/index', { fruits })
-//         })
-//         .catch(err => {
-//             res.json(err)
-//         })
-// })
 
 
 
