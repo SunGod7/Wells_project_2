@@ -22,6 +22,15 @@ User stories: (`As a user ...`)
 
 
 Schema: (model)
+workout
+ -name -String -required
+ -cardio -boolean
+ -weights -boolean
+ -period -number
+
+
+
+Schema: (model)
 - Plan
   - goal - String
   - fast -  String
@@ -35,4 +44,9 @@ Schema: (model)
   ![wireframe](/images/IMG-0443.jpg)
   ![wireframe](/images/IMG-0444.jpg)
   ![wireframe](/images/IMG-0446.jpg)
-  
+  ![wireframe](IMG-0456.jpg)
+  ![wireframe](IMG-0458.jpg)
+  ![wireframe](IMG-0460.jpg)
+  ![wireframe](IMG-0459.jpg)
+  ![wireframe](IMG-0461.jpg)
+  ![wireframe](fasting-plan-erd.png)
