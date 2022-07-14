@@ -37,6 +37,13 @@ Schema: (model)
   - diet -  String
   - workout -  String
   - frequency  String - default value of daily
+  
+  ![wireframe](IMG-0456.jpg)
+  ![wireframe](IMG-0458.jpg)
+  ![wireframe](IMG-0460.jpg)
+  ![wireframe](IMG-0459.jpg)
+  ![wireframe](IMG-0461.jpg)
+  ![wireframe](fasting-plan-erd.png)
   ![wireframe](IMG-0439.jpg)
   ![wireframe](IMG-0440.jpg)
   ![wireframe](IMG-0441.jpg)
@@ -44,9 +51,3 @@ Schema: (model)
   ![wireframe](IMG-0443.jpg)
   ![wireframe](IMG-0444.jpg)
   ![wireframe](IMG-0446.jpg)
-  ![wireframe](IMG-0456.jpg)
-  ![wireframe](IMG-0458.jpg)
-  ![wireframe](IMG-0460.jpg)
-  ![wireframe](IMG-0459.jpg)
-  ![wireframe](IMG-0461.jpg)
-  ![wireframe](fasting-plan-erd.png)
