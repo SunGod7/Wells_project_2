@@ -4,7 +4,7 @@
 <div class="container-md">
     <form action="/fasts/{{fast._id}}?_method=PUT" method="POST">
         <fieldset>
-            <legend>Create Your Fast</legend>
+            <legend>EDIT FAST</legend>
             <label class="form-label">Name:</label>
             <input 
                 class="form-control" 
@@ -47,11 +47,13 @@
             >
 
         </fieldset>
-        <input 
+        <!-- <input 
             type="submit" 
-            value="Edit Fasting Plan" 
+            value="Edit Fasting Plan {{ fast.name }}" 
             class="btn btn-success"
-        >
+            
+        > -->
+        <a href="/fasts" class="btn btn-success">Edit Fasting Plan {{ fast.name }}</a>
     </form>
 </div>
 {% endblock %}

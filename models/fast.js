@@ -10,10 +10,10 @@ const fastSchema = new Schema({//model declaration
     dietOn: String,
     dietOff: String,
     frequency: String,
-    // owner: {
-    //     type: Schema.Types.ObjectId,//
-    //     ref: 'User',//const User = model('User', userSchema)//null
-    // },
+     owner: {
+         type: Schema.Types.ObjectId,//
+         ref: 'User',//const User = model('User', userSchema)//null
+     },
     //comments: [commentSchema]// fruit can have many comments
 
 

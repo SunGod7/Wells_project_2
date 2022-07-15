@@ -22,3 +22,13 @@ body {
     --bs-btn-active-border-color: #{shade-color($bd-yellow, 50%)};
     /* --bs-btn-border-color: transparent; */
   }
+
+
+  /* h1 {
+    color: pink;
+  } */
+
+  .bg-success {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  }

@@ -2,18 +2,22 @@
 
 {% block content %}
     <div class="container-md">
+        <div class="bg-success p-2" style="--bs-bg-opacity: .5;">
        <article>
-            <h1>{{fast.name}}</h1>
-            <h2>Fast for: {{fast.fastHrs}} hours</h2>
-            <h2>Diet while fasting: {{fast.dietOn}}</h2>
-            <h2>Diet when not fasting: {{fast.dietOff}}</h2>
-            <h2>When: {{fast.frequency}}</h2>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h1 class="card-title">{{fast.name}}</h1>
+                <h2>Fast for: {{fast.fastHrs}} hours</h2>
+                <h2>Diet while fasting: {{fast.dietOn}}</h2>
+                <h2>Diet when not fasting: {{fast.dietOff}}</h2>
+                <h2>When: {{fast.frequency}}</h2>
             <!-- <h2> {{fast._id}}</h2> -->
-
+            </div>
+        </div>
        
-        <a href="/fasts/{{fast._id}}/edit">Edit Fruit</a>
+        <button type="button" class="btn btn-warning"><a href="/fasts/{{fast._id}}/edit">Edit Fast</a></button>
             <form action="/fasts/{{fast._id}}?_method=DELETE" method="POST">
-                <input type="submit" value="Delete"> 
+                <input type="submit" value="Delete" class="btn btn-danger"> 
             </form>
         
         <!-- <div class="btn-create">
@@ -22,7 +26,8 @@
             </form>
          </div> -->
         <a href="/fasts/" class="back-btn">BACK</a>  
-        </article>
+          </article>
+      </div>
     </div>
 
 {% endblock %}

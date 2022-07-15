@@ -3,6 +3,7 @@
 {% block content %}
 <div>
     <h2 class="display-6">FASTING PLANS</h2>
+    <h3>Choose one that's comfrtable for you</h3>
     <div class="row">
 
         {% for fast in fasts %}
@@ -22,8 +23,12 @@
             </div>
         {% endfor %}
     </div>
+   
 </div> 
-
+<div>
+    <h4>or create your own FAST</h4>
+    <button type="button" class="btn btn-outline-secondary"><a href="/fasts/new">click to CREATE</a></button>
+</div>
 
 {% endblock %}
 

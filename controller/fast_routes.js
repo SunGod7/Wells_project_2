@@ -62,12 +62,20 @@ router.put('/:id', (req, res) => {
 //localhost:3000/fasts/new
 router.get('/new', (req, res) => {
     
-    res.render('fasts/new')
-       
+     res.render('fasts/new')
+    // const username = req.session.username//added
+    // const loggedIn = req.session.loggedIn
+    // res.render('fasts/new', { username, loggedIn })
 })
+       
+
 
 //POST
 router.post('/', (req, res) => {
+
+    // req.body.owner = req.session.userId
+
+    // console.log(req.body)
 
     Fast.create(req.body)
          .then(fast => {
@@ -100,6 +108,21 @@ router.get('/', (req, res) => {
 })
 
 
+/////////////////////////////////
+// router.get('/mine', (req, res) => {
+//     // find the fruits associated with the logged in user
+//     // TODO: change the username to Users ._id
+    
+//     Fast.find({ owner: req.session.userId })
+//         .then(fasts => {
+//             res.render('fasts/index', { fasts })
+//         })
+//         .catch(error => {
+//             console.log(error)
+//             res.json({ error })
+//         })
+// })
+
 
 
 
@@ -107,33 +130,33 @@ router.get('/', (req, res) => {
 
 
 //fast/seed
-router.get('/seed', (req, res) => {
-    //res.render()
-    const startFasts = [  
-    { name: 'Supreme Fast', fastHrs: '21', dietOn: 'water only',  dietOff: 'no meat', frequency: 'daily for life'},
-    { name: 'Power Fast', fastHrs: '48', dietOn: 'water only',  dietOff: 'Eat Whatever You Want', frequency: 'every week'},
-    { name: 'Juice Fast', fastHrs: '48', dietOn: 'Water or Juice',  dietOff: '', frequency: 'Once a month'},
-    { name: 'Fruit Fast', fastHrs: '72', dietOn: '',  dietOff: 'Water and Fruit', frequency: 'daily'},
-    { name: 'Window Fast', fastHrs: '19', dietOn: 'WATER ONLY',  dietOff: 'Eat Whatever You Want', frequency: 'twice a week'},
-    ]
+// router.get('/seed', (req, res) => {
+//     //res.render()
+//     const startFasts = [  
+//     { name: 'Supreme Fast', fastHrs: '21', dietOn: 'water only',  dietOff: 'no meat', frequency: 'daily for life'},
+//     { name: 'Power Fast', fastHrs: '48', dietOn: 'water only',  dietOff: 'Eat Whatever You Want', frequency: 'every week'},
+//     { name: 'Juice Fast', fastHrs: '48', dietOn: 'Water or Juice',  dietOff: '', frequency: 'Once a month'},
+//     { name: 'Fruit Fast', fastHrs: '72', dietOn: '',  dietOff: 'Water and Fruit', frequency: 'daily'},
+//     { name: 'Window Fast', fastHrs: '19', dietOn: 'WATER ONLY',  dietOff: 'Eat Whatever You Want', frequency: 'twice a week'},
+//     ]
     
      
     
-// console.log('startFasts')
-Fast.deleteMany({})
+// // console.log('startFasts')
+// Fast.deleteMany({})
      
-      .then( ( )=> {
-         Fast.create(startFasts)
-         .then(data => {
-           res.json(data)
+//       .then( ( )=> {
+//          Fast.create(startFasts)
+//          .then(data => {
+//            res.json(data)
     
-       })
-         .catch(console.error)
+//        })
+//          .catch(console.error)
     
-       })
+//        })
 
 
-})
+// })
 
 //SHOW
 //fasts/:id
@@ -145,6 +168,10 @@ router.get('/:id', (req, res) => {
         .then(fast => {
             //res.json(fast)
             res.render('fasts/show', { fast })
+            // const userId = req.session.userId
+            // const username = req.session.username
+            // res.render('fasts/show', { fast, userId, username })
+
         })
         .catch(err => {
             res.json(err)
