@@ -1,13 +1,8 @@
 {% layout 'layout.liquid' %}
 
 {% block content %}
-
-   <title>Fasting Plan</title>
-    <!-- STYLES -->
-    <!-- ============= CONTAINER ============== -->
-    
     <div class="container-md">
-       
+       <article>
             <h1>{{fast.name}}</h1>
             <h2>Fast for: {{fast.fastHrs}} hours</h2>
             <h2>Diet while fasting: {{fast.dietOn}}</h2>
@@ -16,15 +11,18 @@
             <!-- <h2> {{fast._id}}</h2> -->
 
        
-        <div class="btn-create">
-          
-           
-            <form action="/fasts/new" method="POST">
+        <a href="/fasts/{{fast._id}}/edit">Edit Fruit</a>
+            <form action="/fasts/{{fast._id}}?_method=DELETE" method="POST">
+                <input type="submit" value="Delete"> 
+            </form>
+        
+        <!-- <div class="btn-create">
+          <form action="/fasts/new" method="POST">
                  <input type="submit" value="CREATE FAST">
             </form>
-            <a href="/fasts/{{fast._id}}/edit" class="btn btn-primary">Edit Fruit</a>
-         
-        </div>
+         </div> -->
         <a href="/fasts/" class="back-btn">BACK</a>  
+        </article>
     </div>
+
 {% endblock %}

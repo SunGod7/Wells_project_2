@@ -34,7 +34,7 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 // to serve files from public statically
 app.use(express.static('public'))
- app.use('/fasts', fastRoutes)
+app.use('/fasts', fastRoutes)
 
  //app.use('/users', userRoutes)
 

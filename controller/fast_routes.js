@@ -6,6 +6,21 @@ const Fast = require('../models/fast')
 
 
 
+
+// DELETE - Delete
+router.delete('/:id', (req, res) => {
+    const fastId = req.params.id
+    Fast.findByIdAndRemove(fastId)
+        .then(fast => {
+            res.redirect('/fasts')
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+
+
 ///edit
 //
 
@@ -44,7 +59,7 @@ router.put('/:id', (req, res) => {
 })
 
 //NEW
-//localhost:3000/fruits
+//localhost:3000/fasts/new
 router.get('/new', (req, res) => {
     
     res.render('fasts/new')
@@ -90,21 +105,7 @@ router.get('/', (req, res) => {
 
 
 
-//SHOW
-//fasts/:id
-router.get('/:id', (req, res) => {
-    //mongoose to find all fruits
-    const fastId = req.params.id
-    Fast.findById(fastId)
-    // return fruits as json
-        .then(fast => {
-            //res.json(fast)
-            res.render('fasts/show',  { fast })
-        })
-        .catch(err => {
-            res.json(err)
-        })
-})
+
 //fast/seed
 router.get('/seed', (req, res) => {
     //res.render()
@@ -132,12 +133,22 @@ Fast.deleteMany({})
        })
 
 
+})
 
-
-    
-
-
-
+//SHOW
+//fasts/:id
+router.get('/:id', (req, res) => {
+    //mongoose to find all fruits
+    const fastId = req.params.id
+    Fast.findById(fastId)
+    // return fruits as json
+        .then(fast => {
+            //res.json(fast)
+            res.render('fasts/show', { fast })
+        })
+        .catch(err => {
+            res.json(err)
+        })
 })
 
 
