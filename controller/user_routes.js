@@ -16,6 +16,18 @@ const router = express.Router()
 router.get('/signup', (req, res) => {
     res.render('users/signup')
 })
+
+
+router.post('/signup', async (req, res) => {
+     //console.log('this is our initial request body', req.body)
+          req.body.password = await bcrypt.hash(
+                req.body.password,
+                await bcrypt.genSalt(10)
+            )
+            console.log('this is our initial request body', req.body)
+})
+
+
 // one POST to make the db request
 // router.post('/signup', async (req, res) => {
 //     console.log('this is our initial request body', req.body)

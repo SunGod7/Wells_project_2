@@ -11,7 +11,20 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-        <a href="/fasts" class="navbar-brand">The Fasting App</a> 
+    <div class="container-fluid">
+        <a href="/fasts" class="navbar-brand">The Fasting App</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a href="/fasts/new" class="nav-link text-light">New</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a href="/users/signup" class="nav-link text-light">Sign Up</a>
+                    </li>
+                </ul>    
     </nav>       
     <main class="container-md">
         {% block content %}
