@@ -11,7 +11,7 @@ const morgan = require('morgan')
 const methodOverride = require('method-override')
 const fastRoutes = require('./controller/fast_routes')
 const userRoutes = require('./controller/user_routes')
-
+const workoutRoutes = require('./controller/workout_routes')
 
 
 
@@ -26,42 +26,41 @@ const app = require('liquid-express-views')(express())
 ////////////////////////////////////////////
 // Middleware
 ////////////////////////////////////////////
-// this is for request logging
+
 app.use(morgan('tiny'))
 app.use(methodOverride('_method'))
-// parses urlencoded request bodies
 app.use(express.urlencoded({ extended: false }))
-// to serve files from public statically
 app.use(express.static('public'))
-//const session = require('express-session')
-//const MongoStore = require('connect-mongo')
 
+//session
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
 
-
-
-
-
-// app.use(
-// 	session({
-// 		secret: process.env.SECRET,
-// 		store: MongoStore.create({
-// 			mongoUrl: process.env.DATABASE_URI
-// 		}),
-// 		saveUninitialized: true,
-// 		resave: false
-// 	})
-// )
-app.use('/fasts', fastRoutes)
-app.use('/users', userRoutes)
-
+app.use(
+	session({
+		secret: process.env.SECRET,
+		store: MongoStore.create({
+			mongoUrl: process.env.DATABASE_URI
+		}),
+		saveUninitialized: true,
+		resave: false
+	})
+)
 ////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
+app.use('/fasts', fastRoutes)
+app.use('/users', userRoutes)
+app.use('/workouts', workoutRoutes)
+
+
+//////HOME PAGE?
+
 app.get('/', (req, res) => {
-	res.send(`<h1> WELCOME TO THE FAST MENU!!!</h1> <a href="/fasts/"><h3>FAST 4 LIFE!!!</h3></a>`)
+	//res.send(`<h1> WELCOME TO THE FAST MENU!!!</h1> <a href="/fasts/"><h3>FAST 4 LIFE!!!</h3></a>`)
 	//res.send("index.liquid")
 	//res.render('index.liquid'
-	//res.redirect('/fasts')
+	res.redirect('/fasts')
 	
 })
 

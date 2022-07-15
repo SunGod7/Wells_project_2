@@ -4,15 +4,16 @@ const mongoose = require('./connection')
 // inside of mongoose I want the keys that are named Schema and model
 const { Schema, model } = mongoose
 
-const fastSchema = new Schema({//model declaration
-    name: { type: String, required: true },
-    fastHrs: Number,
-    dietOn: String,
-    dietOff: String,
+const workoutSchema = new Schema({//model declaration
+    exercise: String, 
+    reps: Number,
+    sets: Number,
+    rest: Number,
+    warmup: String,
     frequency: String,
      owner: {
          type: Schema.Types.ObjectId,//
-         ref: 'User',//const User = model('User', userSchema)//null
+         ref: 'Workout',//const User = model('User', userSchema)//null
      },
     //comments: [commentSchema]// fruit can have many comments
 
@@ -23,6 +24,6 @@ const fastSchema = new Schema({//model declaration
 
 // need to make a model// model creation
 // this collections will be called fruits
-const Fast = model('Fast', fastSchema)
+const Workout = model('Workout', workoutSchema)
 
-module.exports = Fast
+module.exports = Workout

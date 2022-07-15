@@ -47,8 +47,8 @@ router.put('/:id', (req, res) => {
 
     Fast.findByIdAndUpdate(fastId, req.body)
 
-       .then(fast =>{
-        res.redirect(`/fasts/${fruit_id}`)
+       .then(fast => {
+        res.redirect(`/fasts/${fast_id}`)
        })
        .catch(err => {
         res.json(err)
@@ -129,34 +129,6 @@ router.get('/', (req, res) => {
 
 
 
-//fast/seed
-// router.get('/seed', (req, res) => {
-//     //res.render()
-//     const startFasts = [  
-//     { name: 'Supreme Fast', fastHrs: '21', dietOn: 'water only',  dietOff: 'no meat', frequency: 'daily for life'},
-//     { name: 'Power Fast', fastHrs: '48', dietOn: 'water only',  dietOff: 'Eat Whatever You Want', frequency: 'every week'},
-//     { name: 'Juice Fast', fastHrs: '48', dietOn: 'Water or Juice',  dietOff: '', frequency: 'Once a month'},
-//     { name: 'Fruit Fast', fastHrs: '72', dietOn: '',  dietOff: 'Water and Fruit', frequency: 'daily'},
-//     { name: 'Window Fast', fastHrs: '19', dietOn: 'WATER ONLY',  dietOff: 'Eat Whatever You Want', frequency: 'twice a week'},
-//     ]
-    
-     
-    
-// // console.log('startFasts')
-// Fast.deleteMany({})
-     
-//       .then( ( )=> {
-//          Fast.create(startFasts)
-//          .then(data => {
-//            res.json(data)
-    
-//        })
-//          .catch(console.error)
-    
-//        })
-
-
-// })
 
 //SHOW
 //fasts/:id

@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container-md">
-        <div class="bg-success p-2" style="--bs-bg-opacity: .5;">
+        <!-- <div class="bg-success p-2" style="--bs-bg-opacity: .5;"> -->
        <article>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -12,12 +12,12 @@
                 <h2>Diet when not fasting: {{fast.dietOff}}</h2>
                 <h2>When: {{fast.frequency}}</h2>
             <!-- <h2> {{fast._id}}</h2> -->
-            </div>
+            <!-- </div> -->
         </div>
        
-        <button type="button" class="btn btn-warning"><a href="/fasts/{{fast._id}}/edit">Edit Fast</a></button>
+        <button type="button" class="btn btn-warning btn-circle btn-xl"><a href="/fasts/{{fast._id}}/edit">Edit Fast</a></button>
             <form action="/fasts/{{fast._id}}?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" class="btn btn-danger"> 
+                <input type="submit" value="Delete" class="btn btn-danger btn-circle btn-xl"> 
             </form>
         
         <!-- <div class="btn-create">
@@ -25,7 +25,7 @@
                  <input type="submit" value="CREATE FAST">
             </form>
          </div> -->
-        <a href="/fasts/" class="back-btn">BACK</a>  
+        <a href="/fasts/" class="btn btn-success btn-circle btn-xl">BACK</a>  
           </article>
       </div>
     </div>

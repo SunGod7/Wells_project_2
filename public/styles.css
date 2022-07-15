@@ -1,6 +1,8 @@
 body {
     background-color: rgb(181, 244, 157);
+    
 }
+
 
 .card {
     margin: 5px;
@@ -31,4 +33,10 @@ body {
   .bg-success {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+    border-radius: 50%;
   }
+
+
+.card-body {align-content: center;} 
+    
+  
