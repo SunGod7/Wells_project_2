@@ -5,10 +5,11 @@ const mongoose = require('./connection')
 const { Schema, model } = mongoose
 
 const workoutSchema = new Schema({//model declaration
+    trainnig: String,
     exercise: String, 
-    reps: Number,
-    sets: Number,
-    rest: Number,
+    reps: String,
+    sets: String,
+    rest: String,
     warmup: String,
     frequency: String,
      owner: {

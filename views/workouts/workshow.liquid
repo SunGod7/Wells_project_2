@@ -1,0 +1,34 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+    <div class="container-md">
+        <!-- <div class="bg-success p-2" style="--bs-bg-opacity: .5;"> -->
+       <article>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h1 class="card-title">{{workout.trainning}}</h1>
+                <h2>{{workout.exercise}}</h2>
+                <h2>{{workout.reps}}</h2>
+                <h2>{{workout.sets}}</h2>
+                 <h2>{{workout.rest}} sec</h2>
+                <h2>{{workout.frequency}}</h2>
+            <!-- <h2> {{workout._id}}</h2> -->
+            <!-- </div> -->
+        </div>
+       
+        <button type="button" class="btn btn-warning btn-circle btn-xl"><a href="/workouts/{{workout._id}}/edit">Edit workout</a></button>
+            <form action="/workouts/{{workout._id}}?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" class="btn btn-danger btn-circle btn-xl"> 
+            </form>
+        
+        <!-- <div class="btn-create">
+          <form action="/fasts/new" method="POST">
+                 <input type="submit" value="CREATE FAST">
+            </form>
+         </div> -->
+        <a href="/workouts/" class="btn btn-success btn-circle btn-xl">BACK</a>  
+          </article>
+      </div>
+    </div>
+
+{% endblock %}
