@@ -1,14 +1,15 @@
 {% layout 'layout.liquid' %}
 
-{% block content %}
+ {% block content %}
 <div>
+    
     <h2 class="display-6">FASTING PLANS</h2>
-    <h3>Choose one that's comfrtable for you</h3>
+    <h3>Choose one that's comfortable for you</h3>
     <div class="row">
-
+       
         {% for fast in fasts %}
-            <div class="card" style="width: 10rem">
-               
+            <div class="card text-bg-secondary mb-3" style="width: 10rem">
+                <img src="/images/raspberry-g089c6a79b_1920.jpg" class="card-img-top" alt="">
                 <div class="card-body">
                     <h6 class="card-title">
                         
