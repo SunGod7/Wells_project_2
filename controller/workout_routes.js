@@ -9,8 +9,41 @@ const router = express.Router()
 
 
 
-//local:3000/workouts
 
+
+// NEW
+// localhost:3000/workouts/new
+// router.get('/worknew', (req, res) => {
+    
+//     //res.render('workouts/new')
+// //    const username = req.session.username//added
+// //    const loggedIn = req.session.loggedIn, { username, loggedIn }
+//    res.render('workouts/worknew')
+// })
+      
+
+
+//POST
+// router.post('/', (req, res) => {
+
+//     // req.body.owner = req.session.userId
+
+//     // console.log(req.body)
+
+//     Workout.create(req.body)
+//         .then(workout => {
+//           console.log(workout)
+//           //res.json(fast)
+//           res.redirect('/workouts')
+   
+//       })
+//         .catch(err => {
+//          res.json(err)
+//    })
+
+// })
+//local:3000/workouts
+//index
 router.get('/', (req, res) => {
     //console.log(pickWorkouts)
     // mongoose to find all fruits
@@ -26,8 +59,7 @@ router.get('/', (req, res) => {
         })
 })
 
-
-    // GET - Show
+// GET - Show
 // local:3000/workouts/:id 
 router.get('/:id', (req, res) => {
     const workoutId = req.params.id
@@ -41,6 +73,9 @@ router.get('/:id', (req, res) => {
         res.json(err)
     })
 })
+
+
+    
 
 //fasts/workseed
 router.get('/workseed', (req, res) => {
@@ -64,16 +99,16 @@ router.get('/workseed', (req, res) => {
 
     ]
 
-   // delete if we have fruits
+   // delete
    Workout.deleteMany({})
-		// insert data
+		
 		.then(() => {
             Workout.create(pickWorkouts)
-            // return this data as json to view
+            
             .then(data => {
                 res.json(data)
             })
-            // .catch(err => console.error(err))
+            
 		    .catch(console.error)
         })
 })

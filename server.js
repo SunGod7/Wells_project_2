@@ -1,7 +1,4 @@
-//setup order
-//server..js
 
-//fasting.js: set up schema
 
 //connection.js: set up connetion to mongoose and export
 //fasting_routes: set up router and routes and export

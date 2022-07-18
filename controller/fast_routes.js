@@ -63,9 +63,9 @@ router.put('/:id', (req, res) => {
 router.get('/new', (req, res) => {
     
      res.render('fasts/new')
-    // const username = req.session.username//added
-    // const loggedIn = req.session.loggedIn
-    // res.render('fasts/new', { username, loggedIn })
+    const username = req.session.username//added
+    const loggedIn = req.session.loggedIn
+    res.render('fasts/new', { username, loggedIn })
 })
        
 
@@ -73,9 +73,9 @@ router.get('/new', (req, res) => {
 //POST
 router.post('/', (req, res) => {
 
-    // req.body.owner = req.session.userId
+     req.body.owner = req.session.userId
 
-    // console.log(req.body)
+     console.log(req.body)
 
     Fast.create(req.body)
          .then(fast => {
@@ -108,20 +108,20 @@ router.get('/', (req, res) => {
 })
 
 
-/////////////////////////////////
-// router.get('/mine', (req, res) => {
-//     // find the fruits associated with the logged in user
-//     // TODO: change the username to Users ._id
+//////////////
+router.get('/myPlan', (req, res) => {
+    // find the fruits associated with the logged in user
+    // TODO: change the username to Users ._id
     
-//     Fast.find({ owner: req.session.userId })
-//         .then(fasts => {
-//             res.render('fasts/index', { fasts })
-//         })
-//         .catch(error => {
-//             console.log(error)
-//             res.json({ error })
-//         })
-// })
+    Fast.find({ owner: req.session.userId })
+        .then(fasts => {
+            res.render('fasts/index', { fasts })
+        })
+        .catch(error => {
+            console.log(error)
+            res.json({ error })
+        })
+})
 
 
 

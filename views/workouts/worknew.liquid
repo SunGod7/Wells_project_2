@@ -1,0 +1,70 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/workouts/" method="POST">
+        <fieldset>
+            <legend>Create Your Workout</legend>
+            <label class="form-label">Trainning:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="name" 
+                placeholder="name your fast"
+            >
+            <label class="form-label">exercise:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="exercise" 
+                placeholder="Enter exercise"
+            >
+            <label class="form-label">reps:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="reps" 
+                placeholder="How many???"
+            >
+            <label class="form-label">sets:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="sets" 
+                placeholder="How many???"
+            >
+            <label class="form-label">rest:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="rest" 
+                placeholder="Take your time"
+            >
+            <label class="form-label">warmup:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="warmup" 
+                placeholder="Get your heart rate going!"
+            >
+
+
+
+        </fieldset>
+        <label class="form-label">frequency:</label>
+        <input 
+            class="form-control" 
+            type="text" 
+            name="frequency" 
+            placeholder="Daily???"
+        >
+
+        <input 
+            type="submit" 
+            value="Create Workout Plan" 
+            class="btn btn-success"
+        >
+    </form>
+    <a href="/workouts" class="btn btn-warning">Nevermind</a>
+</div>
+{% endblock %}
