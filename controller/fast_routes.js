@@ -48,7 +48,7 @@ router.put('/:id', (req, res) => {
     Fast.findByIdAndUpdate(fastId, req.body)
 
        .then(fast => {
-        res.redirect(`/fasts/${fast_id}`)
+        res.redirect(`/fasts/${fast._id}`)
        })
        .catch(err => {
         res.json(err)
@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
 //localhost:3000/fasts/new
 router.get('/new', (req, res) => {
     
-     res.render('fasts/new')
+     //res.render('fasts/new')
     const username = req.session.username//added
     const loggedIn = req.session.loggedIn
     res.render('fasts/new', { username, loggedIn })
@@ -75,7 +75,7 @@ router.post('/', (req, res) => {
 
      req.body.owner = req.session.userId
 
-     console.log(req.body)
+     //console.log(req.body)
 
     Fast.create(req.body)
          .then(fast => {
@@ -87,7 +87,7 @@ router.post('/', (req, res) => {
          .catch(err => {
           res.json(err)
     })
-    //res.render('fruits/new')
+   
        
 })
 //INDEX
@@ -139,10 +139,10 @@ router.get('/:id', (req, res) => {
     // return fruits as json
         .then(fast => {
             //res.json(fast)
-            res.render('fasts/show', { fast })
-            // const userId = req.session.userId
-            // const username = req.session.username
-            // res.render('fasts/show', { fast, userId, username })
+            //res.render('fasts/show', { fast })
+            const userId = req.session.userId
+            const username = req.session.username
+            res.render('fasts/show', { fast, userId, username })
 
         })
         .catch(err => {

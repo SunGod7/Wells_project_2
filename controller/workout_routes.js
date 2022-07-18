@@ -3,45 +3,91 @@ const Workout = require('../models/workout')
 
 const router = express.Router()
 
+// DELETE - Delete
+router.delete('/:id', (req, res) => {
+    const workoutId = req.params.id
+    Workout.findByIdAndRemove(workoutId)
+        .then(workout => {
+            res.redirect('/workouts')
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+
+
+///edit
+//
+
+router.get('/:id/workedit', (req, res) => {
+    const workoutId = req.params.id
+
+    Workout.findById(workoutId)
+    // return fruits as json
+        .then(workout => {
+            //res.json(fast)
+            res.render('workouts/workedit',  { workout })
+        })
+        .catch(err => {
+            res.json(err)
+        })
+    
+    
+       
+})
+
+//PUT - UPDATE
+router.put('/:id', (req, res) => {
+    const workoutId = req.params.id
+
+    Workout.findByIdAndUpdate(workoutId, req.body)
+
+       .then(workout => {
+        res.redirect(`/workouts/${workout._id}`)
+       })
+       .catch(err => {
+        res.json(err)
+    })
 
 
 
 
 
-
+})
 
 
 // NEW
 // localhost:3000/workouts/new
-// router.get('/worknew', (req, res) => {
+router.get('/worknew', (req, res) => {
     
-//     //res.render('workouts/new')
-// //    const username = req.session.username//added
-// //    const loggedIn = req.session.loggedIn, { username, loggedIn }
-//    res.render('workouts/worknew')
-// })
+    //res.render('workouts/new')
+//    const username = req.session.username//added
+//    const loggedIn = req.session.loggedIn, { username, loggedIn }
+   res.render('workouts/worknew')
+})
       
 
 
 //POST
-// router.post('/', (req, res) => {
+router.post('/', (req, res) => {
 
-//     // req.body.owner = req.session.userId
+    // req.body.owner = req.session.userId
 
-//     // console.log(req.body)
+    // console.log(req.body)
 
-//     Workout.create(req.body)
-//         .then(workout => {
-//           console.log(workout)
-//           //res.json(fast)
-//           res.redirect('/workouts')
+    Workout.create(req.body)
+        .then(workout => {
+          console.log(workout)
+          //res.json(fast)
+          res.redirect('/workouts')
    
-//       })
-//         .catch(err => {
-//          res.json(err)
-//    })
+      })
+        .catch(err => {
+         res.json(err)
+   })
 
-// })
+ })
 //local:3000/workouts
 //index
 router.get('/', (req, res) => {
