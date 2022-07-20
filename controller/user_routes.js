@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
     // console.log('this is username', username)
      //console.log('this is password', password)
    // console.log('this is the session', req.session)
-    // first we find the user
+    
     User.findOne({ username })
     .then(async (user) => { // ._id
         // we check if the user exists

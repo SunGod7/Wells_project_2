@@ -136,7 +136,7 @@ router.get('/:id', (req, res) => {
     //mongoose to find all fruits
     const fastId = req.params.id
     Fast.findById(fastId)
-    // return fruits as json
+    
         .then(fast => {
             //res.json(fast)
             //res.render('fasts/show', { fast })

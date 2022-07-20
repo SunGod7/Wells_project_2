@@ -1,11 +1,12 @@
 {% layout 'layout.liquid' %}
 
 {% block content %}
+
 <div>
     <h2 class="display-6">  TRAINNING PLANS</h2>
     <h3>Choose one that's comfortable for you</h3>
     <div class="row">
-
+        
         {% for workout in workouts %}
             <div class="card" style="width: 10rem">
                 <img src="/images/sports-gaeeb42e20_1280.png " class="card-img-top" alt="">
@@ -27,6 +28,7 @@
    
 </div> 
 <div>
+    
     <h4>or create your own FAST</h4>
     <button type="button" class="btn btn-success btn-circle btn-xl"><a href="/workouts/worknew">click to CREATE</a></button>
 </div>

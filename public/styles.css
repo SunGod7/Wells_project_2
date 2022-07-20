@@ -1,7 +1,7 @@
 body {
      background-color: rgb(232, 157, 244);
      color: blue; 
-    /* background-image: url( '../images/raspberry-g089c6a79b_1920.jpg');   */
+    
     
 }
 
@@ -41,4 +41,14 @@ body {
 
 .card-body {align-content: center;} 
     
+  h2 {color: rgba(110, 6, 113, 0.845);}
+
+  .bg-image {
+   width: 100%;
+   height: auto;
+   /* background-size: 100% 100%; */
+    /* justify-content: center; */
+  }
+
+
   

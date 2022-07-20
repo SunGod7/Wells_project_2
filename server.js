@@ -55,19 +55,19 @@ app.use('/workouts', workoutRoutes)
 
 
 //////HOME PAGE?
-app.get('/', (req, res) => {
-	let name = req.query.name
-	const request = require('request')
+// app.get('/', (req, res) => {
+// 	let name = req.query.name
+// 	const request = require('request')
 	
-	request(`https://wger.de/api/v2/exerciseinfo/?=${name}&appid=${process.env.API_KEY}&format=json`, 
-	 function(error, response, body) {
+// 	request(`https://wger.de/api/v2/exerciseinfo/?=${name}&appid=${process.env.API_KEY}&format=json`, 
+// 	 function(error, response, body) {
 
-		 let data = JSON.parse(body)
-		if (response.statusCode === 200) {
-			res.send(` Great exercises using "${name} " are ${data.list[0].name[0].muscles}`)
-		}
-	})
-})		
+// 		 let data = JSON.parse(body)
+// 		if (response.statusCode === 200) {
+// 			res.send(` Great exercises using "${name} " are ${data.list[0].name[0].muscles}`)
+// 		}
+// 	})
+// })		
 
 app.get('/', (req, res) => {
 	//res.send(`<h1> WELCOME TO THE FAST MENU!!!</h1> <a href="/fasts/"><h3>FAST 4 LIFE!!!</h3></a>`)
