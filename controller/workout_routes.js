@@ -105,20 +105,7 @@ router.get('/', (req, res) => {
         })
 })
 
-// GET - Show
-// local:3000/workouts/:id 
-router.get('/:id', (req, res) => {
-    const workoutId = req.params.id
 
-    Workout.findById(workoutId)
-    .then(workout => {
-        //res.json(workout)
-        res.render('workouts/workshow', { workout })
-    })
-    .catch(err => {
-        res.json(err)
-    })
-})
 
 
     
@@ -160,7 +147,20 @@ router.get('/workseed', (req, res) => {
 })
 
 
+// GET - Show
+// local:3000/workouts/:id 
+router.get('/:id', (req, res) => {
+    const workoutId = req.params.id
 
+    Workout.findById(workoutId)
+    .then(workout => {
+        //res.json(workout)
+        res.render('workouts/workshow', { workout })
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
 
 
 

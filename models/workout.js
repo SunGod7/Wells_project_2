@@ -14,7 +14,7 @@ const workoutSchema = new Schema({//model declaration
     frequency: String,
      owner: {
          type: Schema.Types.ObjectId,//
-         ref: 'Workout',//const User = model('User', userSchema)//null
+         ref: 'User',//const User = model('User', userSchema)//null
      },
     //comments: [commentSchema]// fruit can have many comments
 
