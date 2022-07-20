@@ -52,9 +52,9 @@ router.post('/login', async (req, res) => {
     
     // destructure data from request body
     const { username, password } = req.body
-    // console.log('this is username', username)
-     //console.log('this is password', password)
-   // console.log('this is the session', req.session)
+    // console.log( username)
+     //console.log( password)
+   // console.log( req.session)
     
     User.findOne({ username })
     .then(async (user) => { // ._id
@@ -65,8 +65,7 @@ router.post('/login', async (req, res) => {
             // bcrypt.compare evaluates to a truthy or falsy value
             const result = await bcrypt.compare(password, user.password)
             if (result) {
-                // if the compare comes back truthy we store user properties in the session
-                // if the pw is correct, we'll use the newly created session object
+                
                 req.session.username = username
                 req.session.loggedIn = true
                 req.session.userId = user._id

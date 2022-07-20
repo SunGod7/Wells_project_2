@@ -1,6 +1,7 @@
 # Wells_project_2
 # fasting API
-
+# A full-stack wellness application. Rooted in fasting and exercising. Users are     allowed to choose fasting and workout plans or create their own.
+# unsolved problems: wanted to use public API but could not get it to work right. will # be Goal for 2nd edition
 User stories: (`As a user ...`)
 
 - create a fasting plan
