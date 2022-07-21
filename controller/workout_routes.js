@@ -122,6 +122,8 @@ router.get('/workseed', (req, res) => {
         {trainnig: 'Advanced Upper Body', exercise: 'bench press, dumdbell curls', reps: '8-12, 10-12', sets: '5', rest: '90', warmup: '100 push-ups', frequency: '4 times per week'},
         {trainnig: 'Advanced Cardio', exercise: 'Burpees', reps: '100', sets: '3', rest: '2 min', warmup: '50 push-ups, 50 jumping jack', frequency: '4 times per week'},
         {trainnig: 'Advanced stomache ', exercise: 'sit-ups, pull-ups', reps: '30-40, 10-15', sets: '12', rest: '60', warmup: '50 jumping jack', frequency: '4 times per week'},
+        {trainnig: '(PRETTY TONE)Advanced Arms ', exercise: 'dumdbell curls, pull-ups with 100lb plate', reps: '10-15, 6-8', sets: '12', rest: '120', warmup: '50 jumping jack', frequency: '3x per week'},
+        {trainnig: '(Muhammad)Advanced Cardio', exercise: 'Navy seal Burpees', reps: '100', sets: '3', rest: '2 min', warmup: '50 push-ups, 50 jumping jack', frequency: '4 times per week'},
 
 
 
