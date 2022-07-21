@@ -1,8 +1,13 @@
-body {
+/* body {
      background-color: rgb(232, 157, 244);
      color: blue; 
     
     
+} */
+
+body {
+  background-image: url('images/lilac-g4a88e10c4_1280.png');
+  font-family: 'Courgette', cursive;
 }
 
 
@@ -50,5 +55,13 @@ body {
     /* justify-content: center; */
   }
 
-
-  
+  .card-body1 {
+    align-content: center;
+    background-image: url('images/water-g6237ad5b2_640.jpg');
+  } 
+  /* <img src="/images/fruit-gf3a820353_640.jpg" class="bg-image" alt="">  */
+  /* meal-g4873efe66_1920.jpg */
+  .card-body2 {
+    align-content: center;
+    background-color: lightblue;
+  }
