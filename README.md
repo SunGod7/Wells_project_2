@@ -43,11 +43,10 @@ Schema: (model)
   - dietOff -  String
   - frequency - String 
   
-  ![wireframe](IMG-0456.jpg)
+  
   ![wireframe](IMG-0458.jpg)
   ![wireframe](IMG-0460.jpg)
   ![wireframe](IMG-0459.jpg)
-  ![wireframe](IMG-0461.jpg)
   ![wireframe](IMG-0474.jpg)
   ![wireframe](IMG-0439.jpg)
   ![wireframe](IMG-0440.jpg)
@@ -55,4 +54,4 @@ Schema: (model)
   ![wireframe](IMG-0442.jpg)
   ![wireframe](IMG-0443.jpg)
   ![wireframe](IMG-0444.jpg)
-  ![wireframe](IMG-0446.jpg)
+  
