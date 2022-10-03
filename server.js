@@ -50,7 +50,8 @@ app.get('/', (req, res) => {
 	//res.send(`<h1> WELCOME TO THE FAST MENU!!!</h1> <a href="/fasts/"><h3>FAST 4 LIFE!!!</h3></a>`)
 	//res.send("index.liquid")
 	//res.render('index.liquid'
-	res.redirect('/fasts')
+	// res.redirect('/fasts')
+	res.redirect('/users/signup')
 	
 })
 

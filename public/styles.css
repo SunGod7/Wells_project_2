@@ -65,3 +65,17 @@ body {
     align-content: center;
     background-color: lightblue;
   }
+
+  /* .container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  } */
+
+  video {
+    /* width: 100%; */
+  }
+
+  .c-video {
+    /* width: 100%; */
+  }

@@ -124,6 +124,10 @@ router.get('/workseed', (req, res) => {
         {trainnig: 'Advanced stomache ', exercise: 'sit-ups, pull-ups', reps: '30-40, 10-15', sets: '12', rest: '60', warmup: '50 jumping jack', frequency: '4 times per week'},
         {trainnig: '(PRETTY TONE)Advanced Arms ', exercise: 'dumdbell curls, pull-ups with 100lb plate', reps: '10-15, 6-8', sets: '12', rest: '120', warmup: '50 jumping jack', frequency: '3x per week'},
         {trainnig: '(Muhammad)Advanced Cardio', exercise: 'Navy seal Burpees', reps: '100', sets: '3', rest: '2 min', warmup: '50 push-ups, 50 jumping jack', frequency: '4 times per week'},
+        {trainnig: '(Britt)Cardio', exercise: 'Walking on the treadmil', reps: '30 mins', sets: '1', rest: '2 min', warmup: 'jumping jack and stretching', frequency: '3 times per week'},
+        {trainnig: '(Britt)Beginner Lower Body', exercise: 'Air squats and lunges', reps: '5, 5', sets: '4', rest: '90', warmup: ' jumping jack and stretching', frequency: 'Monday'},
+        {trainnig: '(Britt)Upper Body', exercise: 'dumdbell curls and Push-ups ', reps: '8, 8', sets: '5', rest: '90', warmup: ' jumping jack and stretching', frequency: 'Wednsday'},
+        {trainnig: '(Britt) stomache', exercise: 'reverse crunch, oblique crunch', reps: '10-12, 10-12 ', sets: '5', rest: '90', warmup: 'jumping jack and stretching', frequency: 'Friday'},
 
 
 
